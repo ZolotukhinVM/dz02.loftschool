@@ -9,7 +9,7 @@ function task1($arString, $boolVal = false)
         foreach ($arString as $value) {
             $resString .= $value . " ";
         }
-        return $resString;
+        echo $resString;
     }
 }
 

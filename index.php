@@ -2,7 +2,7 @@
 include("./src/functions.php");
 // task1
 $arTask1 = ["Row 1", "Row 2", "Row 3"];
-echo task1($arTask1, true);
+task1($arTask1, false);
 echo "<hr>";
 // task2
 echo task2("+", 10, 5, 1);
