@@ -1,3 +1,4 @@
+
 <?php
 include("./src/functions.php");
 // task1
@@ -19,4 +20,4 @@ task5("Карл у Клары украл Коллары");
 task5Opt2("Две бутылки лимонада");
 echo "<hr>";
 // task6
-echo task6("test.txt");
+task6("test.txt");

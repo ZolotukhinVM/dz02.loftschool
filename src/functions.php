@@ -1,6 +1,7 @@
 <?php
 function task1($arString, $boolVal = false)
 {
+    $resString = "";
     if ($boolVal == false) {
         foreach ($arString as $value) {
             echo "<p>" . $value . "</p>";
@@ -16,9 +17,10 @@ function task1($arString, $boolVal = false)
 function task2($str, ...$num)
 {
     $res = $num[0];
+    $resStr = "";
     $countNum = count($num);
-    for ($i=1; $i < $countNum; $i++) {
-        if ($i != ($countNum-1)) {
+    for ($i = 1; $i < $countNum; $i++) {
+        if ($i != ($countNum - 1)) {
             $resStr .= $num[$i] . " " . $str . " ";
         } else {
             $resStr .= $num[$i];
@@ -49,9 +51,9 @@ function task3($num1, $num2)
         echo "Некорректные вводные данные";
     } else {
         echo "<table border=1 cellpadding=5>";
-        for ($i=1; $i <= $num1; $i++) {
+        for ($i = 1; $i <= $num1; $i++) {
             echo "<tr>";
-            for ($j=1; $j <= $num2; $j++) {
+            for ($j = 1; $j <= $num2; $j++) {
                 echo "<td>";
                 echo $i * $j;
                 echo "</td>";
@@ -90,13 +92,12 @@ function task5Opt2($str)
     echo str_replace("Две", "Три", $str);
 }
 
-function task6 ($fileName)
+function task6($fileName)
 {
     $fp = fopen($fileName, "ra");
     fwrite($fp, "Hello again");
-    while (!feof($fp))
-    {
+    while (!feof($fp)) {
         $fileContent = fgets($fp, 999);
-        return $fileContent;
+        echo $fileContent;
     }
 }
