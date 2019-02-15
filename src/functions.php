@@ -17,12 +17,7 @@ function task2($str, ...$num)
     $resStr = "";
     $countNum = count($num);
     for ($i = 1; $i < $countNum; $i++) {
-        if ($i != ($countNum - 1)) {
-            $resStr .= $num[$i] . " " . $str . " ";
-        } else {
-            $resStr .= $num[$i];
-            $resStr = $num[0] . $str . $resStr;
-        }
+        $resStr = implode($str, $num);
         switch ($str) {
             case '+':
                 $res += $num[$i];
