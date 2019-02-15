@@ -2,15 +2,12 @@
 function task1($arString, $boolVal = false)
 {
     $resString = "";
-    if ($boolVal == false) {
+    if ($boolVal) {
+        echo $resString = implode(" ", $arString);
+    } else {
         foreach ($arString as $value) {
             echo "<p>" . $value . "</p>";
         }
-    } else {
-        foreach ($arString as $value) {
-            $resString .= $value . " ";
-        }
-        echo $resString;
     }
 }
 
@@ -24,7 +21,7 @@ function task2($str, ...$num)
             $resStr .= $num[$i] . " " . $str . " ";
         } else {
             $resStr .= $num[$i];
-            $resStr = $num[0] . " + " . $resStr;
+            $resStr = $num[0] . $str . $resStr;
         }
         switch ($str) {
             case '+':
@@ -34,20 +31,23 @@ function task2($str, ...$num)
                 $res -= $num[$i];
                 break;
             case '/':
-                $res = $res / $num[$i];
+                if (!in_array(0, $num)) {
+                    $res /= $num[$i];
+                } else {
+                    $res = "error";
+                }
                 break;
             case '*':
                 $res *= $num[$i];
                 break;
         }
     }
-    // return $res;
     return $resStr . " = " . $res;
 }
 
 function task3($num1, $num2)
 {
-    if ((gettype($num1) != "integer") || (gettype($num2) != "integer")) {
+    if ( (!(int)$num1 || !(int)$num2) && ($num1 <= 0 || $num2 <= 0) ) {
         echo "Некорректные вводные данные";
     } else {
         echo "<table border=1 cellpadding=5>";
@@ -76,15 +76,16 @@ function task4Opt2()
 
 function task5($str)
 {
-    $arStr = explode(" ", trim($str));
-    foreach ($arStr as &$value) {
-        if (substr($value, 0, 1) == "К") {
-            $value = substr($value, 1);
-        }
-    }
-    foreach ($arStr as $word) {
-        echo $word . " ";
-    }
+    // $arStr = explode(" ", trim($str));
+    // foreach ($arStr as &$value) {
+    //     if (substr($value, 0, 1) == "К") {
+    //         $value = substr($value, 1);
+    //     }
+    // }
+    // foreach ($arStr as $word) {
+    //     echo $word . " ";
+    // }
+    echo str_replace("K", " ", $str);
 }
 
 function task5Opt2($str)
@@ -96,8 +97,5 @@ function task6($fileName)
 {
     $fp = fopen($fileName, "ra");
     fwrite($fp, "Hello again");
-    while (!feof($fp)) {
-        $fileContent = fgets($fp, 999);
-        echo $fileContent;
-    }
+    return file_get_contents($fileName);
 }
