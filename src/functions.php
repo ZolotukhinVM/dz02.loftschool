@@ -1,7 +1,6 @@
 <?php
 function task1($arString, $boolVal = false)
 {
-    $resString = "";
     if ($boolVal) {
         echo $resString = implode(" ", $arString);
     } else {
@@ -14,10 +13,9 @@ function task1($arString, $boolVal = false)
 function task2($str, ...$num)
 {
     $res = $num[0];
-    $resStr = "";
+    $resStr = implode($str, $num);
     $countNum = count($num);
     for ($i = 1; $i < $countNum; $i++) {
-        $resStr = implode($str, $num);
         switch ($str) {
             case '+':
                 $res += $num[$i];
@@ -42,7 +40,7 @@ function task2($str, ...$num)
 
 function task3($num1, $num2)
 {
-    if ( (!(int)$num1 || !(int)$num2) && ($num1 <= 0 || $num2 <= 0) ) {
+    if ((!(int)$num1 || !(int)$num2) && ($num1 <= 0 || $num2 <= 0)) {
         echo "Некорректные вводные данные";
     } else {
         echo "<table border=1 cellpadding=5>";
