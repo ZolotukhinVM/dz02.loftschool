@@ -1,5 +1,5 @@
 <?php
-function task1($arString, $boolVal = false)
+function task1($arString, $boolVal)
 {
     if ($boolVal) {
         echo implode(" ", $arString);
