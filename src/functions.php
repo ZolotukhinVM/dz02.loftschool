@@ -2,7 +2,7 @@
 function task1($arString, $boolVal = false)
 {
     if ($boolVal) {
-        echo $resString = implode(" ", $arString);
+        echo implode(" ", $arString);
     } else {
         foreach ($arString as $value) {
             echo "<p>" . $value . "</p>";
@@ -88,7 +88,7 @@ function task5Opt2($str)
 
 function task6($fileName)
 {
-    $fp = fopen($fileName, "ra");
-    fwrite($fp, "Hello again");
+    $fileOpen = fopen($fileName, "ra");
+    fwrite($fileOpen, "Hello again");
     return file_get_contents($fileName);
 }
