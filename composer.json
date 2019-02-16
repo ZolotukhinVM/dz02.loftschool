@@ -1,0 +1,18 @@
+{
+  "name": "user/quick.start",
+  "scripts": {
+    "phpcs": "phpcs --colors --standard=PSR12 --ignore=*/vendor/* .",
+    "phpmd": "phpmd src/ text cleancode,codesize,controversial,design,naming,unusedcode"
+  },
+  "authors": [
+    {
+      "name": "Viktor Zolotukhin",
+      "email": "zolotukhinvm@ya.ru"
+    }
+  ],
+  "require": {
+    "phpmd/phpmd": "@stable",
+    "squizlabs/php_codesniffer": "@stable",
+    "twig/twig": "^2.6"
+  }
+}
