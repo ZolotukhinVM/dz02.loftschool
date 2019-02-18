@@ -1,16 +1,18 @@
 <?php
-function task1($arString, $boolVal)
+function task1(array $arString, $boolVal): string
 {
+    $result = "";
     if ($boolVal) {
-        echo implode(" ", $arString);
+        $result = implode(" ", $arString);
     } else {
         foreach ($arString as $value) {
-            echo "<p>" . $value . "</p>";
+            $result .= "<p>" . $value . "</p>";
         }
     }
+    return $result;
 }
 
-function task2($str, ...$num)
+function task2(string $str, ...$num): string
 {
     $res = $num[0];
     $resStr = implode($str, $num);
@@ -38,7 +40,7 @@ function task2($str, ...$num)
     return $resStr . " = " . $res;
 }
 
-function task3($num1, $num2)
+function task3(int $num1, int $num2)
 {
     if ((!(int)$num1 || !(int)$num2) && ($num1 <= 0 || $num2 <= 0)) {
         echo "Некорректные вводные данные";
@@ -57,12 +59,12 @@ function task3($num1, $num2)
     }
 }
 
-function task4()
+function task4(): string
 {
     return date('d.m.Y H:i');
 }
 
-function task4Opt2()
+function task4Opt2(): string
 {
     return mktime(0, 0, 0, 2, 24, 2016);
 }
@@ -78,17 +80,16 @@ function task5($str)
     // foreach ($arStr as $word) {
     //     echo $word . " ";
     // }
-    echo str_replace("K", " ", $str);
+    return str_replace("K", " ", $str);
 }
 
-function task5Opt2($str)
+function task5Opt2($str): string
 {
-    echo str_replace("Две", "Три", $str);
+    return str_replace("Две", "Три", $str);
 }
 
-function task6($fileName)
+function task6($fileName): string
 {
-    $fileOpen = fopen($fileName, "ra");
-    fwrite($fileOpen, "Hello again");
+    file_put_contents($fileName, "Hello again");
     return file_get_contents($fileName);
 }
