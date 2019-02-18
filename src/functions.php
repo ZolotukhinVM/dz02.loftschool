@@ -69,7 +69,7 @@ function task4Opt2(): string
     return mktime(0, 0, 0, 2, 24, 2016);
 }
 
-function task5($str)
+function task5($str): string
 {
     // $arStr = explode(" ", trim($str));
     // foreach ($arStr as &$value) {
